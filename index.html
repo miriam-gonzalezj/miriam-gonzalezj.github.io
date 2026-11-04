@@ -73,6 +73,7 @@ section > h2{font-size:26px}
 .fact strong.accent{color:var(--mark)}
 .fact span{font-size:13px;color:var(--muted)}
 .note{font-size:14px;color:var(--muted)}
+.note code{font-family:var(--mono);font-size:13px;color:var(--ink)}
 .case-head{display:flex;align-items:center;gap:14px}
 .case-head img{width:56px;height:56px;flex:none;border-radius:14px}
 .shot{margin:4px 0 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
@@ -144,7 +145,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:va
         <div class="beat"><span class="label">Real use</span><p>GitHub's scheduler skipped the checks, so I added an external trigger that starts them on time. Version 2.0 added alerts on a % move, compared with the previous close or the recent high or low.</p></div>
         <div class="beat"><span class="label">Result</span><p>I set my alerts from my phone and get a message when one hits, at most once a day per alert. No recommendations, no analysis: just my alerts.</p></div>
         <figure class="shot"><img src="targetbell.jpg" width="1828" height="965" loading="lazy" alt="TargetBell: sign in with GitHub, the alert list, a percentage alert, and the alert arriving in Telegram"></figure>
-        <p class="note">Native Android app in Java, plus Python, GitHub Actions and the Telegram Bot API. The source code is private; <a href="https://github.com/miriam-gonzalezj" target="_blank" rel="noopener">more on GitHub</a>. Live demo available in an interview.</p>
+        <p class="note">Native Android app in Java, plus Python, GitHub Actions and the Telegram Bot API. The code is in a private GitHub repository, <code>targetbell-android</code>; I can give access on request. Live demo available in an interview.</p>
       </div>
       <aside class="facts" aria-label="Key facts">
         <div class="fact"><strong>&lt; 4 h</strong><span>to the first working version</span></div>
