@@ -64,6 +64,8 @@ section > h2{font-size:26px}
 .fact strong.accent{color:var(--mark)}
 .fact span{font-size:13px;color:var(--muted)}
 .note{font-size:14px;color:var(--muted)}
+.shot{margin:4px 0 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
+.shot img{display:block;width:100%;height:auto}
 
 footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
 
@@ -124,6 +126,24 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:va
 
     <article class="case">
       <div>
+        <span class="tag">Product · personal project</span>
+        <h3>TargetBell: price alerts for US stocks, in Mexican pesos</h3>
+        <div class="beat"><span class="label">Problem</span><p>I invest on my own through the Mexican market and already know the price I want, but I can't watch the market all day. My broker's alerts stopped arriving, an update erased them, and its orders are canceled at the close, so I was checking prices by hand.</p></div>
+        <div class="beat"><span class="label">Decision</span><p>I wrote the requirements and directed Claude. The price checks run in the cloud (GitHub Actions, every 30 minutes in market hours) and send a Telegram message. The Android app is only a remote control for the alerts: no background work, no passwords or secrets stored in it, and it never overwrites a change made elsewhere.</p></div>
+        <div class="beat"><span class="label">Real use</span><p>GitHub's scheduler skipped the checks, so I added an external trigger that starts them on time. Version 2.0 added alerts on a % move, compared with the previous close or the recent high or low.</p></div>
+        <div class="beat"><span class="label">Result</span><p>I set my alerts from my phone and get a message when one hits, at most once a day per alert. No recommendations, no analysis: just my alerts.</p></div>
+        <figure class="shot"><img src="targetbell.jpg" width="1828" height="965" loading="lazy" alt="TargetBell: sign in with GitHub, the alert list, a percentage alert, and the alert arriving in Telegram"></figure>
+        <p class="note">Native Android app in Java, plus Python, GitHub Actions and the Telegram Bot API. The source code is private; <a href="https://github.com/miriam-gonzalezj" target="_blank" rel="noopener">more on GitHub</a>. Live demo available in an interview.</p>
+      </div>
+      <aside class="facts" aria-label="Key facts">
+        <div class="fact"><strong>&lt; 4 h</strong><span>to the first working version</span></div>
+        <div class="fact"><strong>79</strong><span>automated tests for the logic</span></div>
+        <div class="fact"><strong class="accent">0</strong><span>passwords or secrets stored in the app</span></div>
+      </aside>
+    </article>
+
+    <article class="case">
+      <div>
         <span class="tag">Process redesign · HSBC Mexico</span>
         <h3>Collections reporting, rebuilt</h3>
         <div class="beat"><span class="label">Ask</span><p>Move a collections report from Excel into SAS, exactly as it was. It ran on a macro over many Excel files with years of history. It took six hours to refresh, the macro sometimes crashed, and everything was local, with no backup.</p></div>
@@ -166,6 +186,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:va
   <footer>
     <p>Code and live walkthroughs available on request. Bank work is described without confidential detail.</p>
     <p>Since June 2026 I also design and evaluate software engineering tasks used to train large language models (under NDA).</p>
+    <p>© 2026 Miriam González Jaimes. All rights reserved.</p>
   </footer>
 </div>
 
