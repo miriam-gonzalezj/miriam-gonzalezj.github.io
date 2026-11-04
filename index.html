@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Miriam González Jaimes Work Samples</title>
-<meta name="description" content="Work samples by Miriam González Jaimes: applied AI and data strategy. Personal Android apps built with AI, and data projects from 18 years at HSBC Mexico.">
+<meta name="description" content="Work samples by Miriam González Jaimes: applied AI and data strategy. Personal Android apps built with AI (Latido Miri and TargetBell), and data projects from 18 years at HSBC Mexico.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://miriam-gonzalezj.github.io/">
 <meta property="og:title" content="Miriam González Jaimes · Work samples">
-<meta property="og:description" content="Applied AI and data strategy. Personal Android apps built with AI, and data projects from 18 years at HSBC Mexico.">
+<meta property="og:description" content="Applied AI and data strategy. Personal Android apps built with AI (Latido Miri and TargetBell), and data projects from 18 years at HSBC Mexico.">
 <meta property="og:image" content="https://miriam-gonzalezj.github.io/preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -73,6 +73,8 @@ section > h2{font-size:26px}
 .fact strong.accent{color:var(--mark)}
 .fact span{font-size:13px;color:var(--muted)}
 .note{font-size:14px;color:var(--muted)}
+.case-head{display:flex;align-items:center;gap:14px}
+.case-head img{width:56px;height:56px;flex:none;border-radius:14px}
 .shot{margin:4px 0 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
 .shot img{display:block;width:100%;height:auto}
 
@@ -119,7 +121,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:va
     <article class="case">
       <div>
         <span class="tag">Applied AI · personal project</span>
-        <h3>Blood pressure tracker</h3>
+        <div class="case-head"><img src="logo-latido.png" width="56" height="56" alt="Latido Miri app icon"><h3>Latido Miri: blood pressure tracker</h3></div>
         <div class="beat"><span class="label">Problem</span><p>I needed reliable readings so my doctor could assess my blood pressure with data, not a single reading in the office. I was logging every measurement by hand in a spreadsheet: repetitive, error-prone and slow.</p></div>
         <div class="beat"><span class="label">First try</span><p>In 2024 I tried to build an app that reads the monitor's digital display and could not get reliable digit recognition.</p></div>
         <div class="beat"><span class="label">Decision</span><p>In 2026 I rebuilt it with Claude. I wrote the specification: read the result, store each measurement, analyze trends. I proposed a neural network, then saw it wasn't needed and directed the iterations that worked instead: a different approach, a reference mark on the display, brightness adjustment.</p></div>
@@ -136,7 +138,7 @@ footer{border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:va
     <article class="case">
       <div>
         <span class="tag">Product · personal project</span>
-        <h3>TargetBell: price alerts for US stocks, in Mexican pesos</h3>
+        <div class="case-head"><img src="logo-targetbell.png" width="56" height="56" alt="TargetBell app icon"><h3>TargetBell: price alerts for US stocks, in Mexican pesos</h3></div>
         <div class="beat"><span class="label">Problem</span><p>I invest on my own through the Mexican market and already know the price I want, but I can't watch the market all day. My broker's alerts stopped arriving, an update erased them, and its orders are canceled at the close, so I was checking prices by hand.</p></div>
         <div class="beat"><span class="label">Decision</span><p>I wrote the requirements and directed Claude. The price checks run in the cloud (GitHub Actions, every 30 minutes in market hours) and send a Telegram message. The Android app is only a remote control for the alerts: no background work, no passwords or secrets stored in it, and it never overwrites a change made elsewhere.</p></div>
         <div class="beat"><span class="label">Real use</span><p>GitHub's scheduler skipped the checks, so I added an external trigger that starts them on time. Version 2.0 added alerts on a % move, compared with the previous close or the recent high or low.</p></div>
